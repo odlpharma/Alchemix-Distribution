@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChemLab Pro - Premium Research Chemicals</title>
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border-color: #EAEAEA;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: white;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    /* Layout */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .container-wide {
+      width: 95%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .items-start {
+      align-items: flex-start;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .space-x-2 > * + * {
+      margin-left: 0.5rem;
+    }
+
+    .space-x-4 > * + * {
+      margin-left: 1rem;
+    }
+
+    .space-x-6 > * + * {
+      margin-left: 1.5rem;
+    }
+
+    .space-x-8 > * + * {
+      margin-left: 2rem;
+    }
+
+    .space-y-2 > * + * {
+      margin-top: 0.5rem;
+    }
+
+    .space-y-3 > * + * {
+      margin-top: 0.75rem;
+    }
+
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
+    }
+
+    .space-y-8 > * + * {
+      margin-top: 2rem;
+    }
+
+    .gap-3 {
+      gap: 0.75rem;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .gap-12 {
+      gap: 3rem;
+    }
+
+    .gap-16 {
+      gap: 4rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .h-full {
+      height: 100%;
+    }
+
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .max-w-2xl {
+      max-width: 42rem;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .flex-grow {
+      flex-grow: 1;
+    }
+
+    .flex-shrink-0 {
+      flex-shrink: 0;
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .py-12 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .py-20 {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .py-24 {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .p-3 {
+      padding: 0.75rem;
+    }
+
+    .p-4 {
+      padding: 1rem;
+    }
+
+    .p-6 {
+      padding: 1.5rem;
+    }
+
+    .p-8 {
+      padding: 2rem;
+    }
+
+    .pr-4 {
+      padding-right: 1rem;
+    }
+
+    .mt-1 {
+      margin-top: 0.25rem;
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+
+    .mt-3 {
+      margin-top: 0.75rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .mt-6 {
+      margin-top: 1.5rem;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .mt-12 {
+      margin-top: 3rem;
+    }
+
+    .mt-16 {
+      margin-top: 4rem;
+    }
+
+    .mt-20 {
+      margin-top: 5rem;
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .mb-3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .mb-12 {
+      margin-bottom: 3rem;
+    }
+
+    .mb-16 {
+      margin-bottom: 4rem;
+    }
+
+    .ml-2 {
+      margin-left: 0.5rem;
+    }
+
+    .-bottom-6 {
+      bottom: -1.5rem;
+    }
+
+    .-right-6 {
+      right: -1.5rem;
+    }
+
+    /* Typography */
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+    }
+
+    .text-base {
+      font-size: 1rem;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+   
+    
+
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+
+    .text-5xl {
+      font-size: 3rem;
+    }
+
+    .text-6xl {
+      font-size: 3.75rem;
+    }
+
+    .font-light {
+      font-weight: 300;
+    }
+
+    .font-normal {
+      font-weight: 400;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .tracking-tight {
+      letter-spacing: -0.025em;
+    }
+
+    .tracking-wide {
+      letter-spacing: 0.025em;
+    }
+
+    .leading-relaxed {
+      line-height: 1.625;
+    }
+
+    .leading-tight {
+      line-height: 1.25;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .text-black {
+      color: black;
+    }
+
+    .text-gray-300 {
+      color: #DDDDDD;
+    }
+
+    .text-gray-400 {
+      color: #A3A3A3;
+    }
+
+    .text-gray-500 {
+      color: #888888;
+    }
+
+    .text-gray-600 {
+      color: #666666;
+    }
+
+    .text-gray-700 {
+      color: #444444;
+    }
+
+    .text-gray-800 {
+      color: #333333;
+    }
+
+    .text-yellow-400 {
+      color: #FBBF24;
+    }
+
+    .text-red-500 {
+      color: #EF4444;
+    }
+
+    .block {
+      display: block;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: white;
+      border-bottom: 1px solid #EAEAEA;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .header .container {
+      width: 80%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: black;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .logo:hover {
+      color: #333333;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #666666;
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: black;
+    }
+
+    .nav-link.active {
+      color: black;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: black;
+    }
+
+    /* Hero Section */
+ .hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%231e90ff" opacity="0.5"/><circle cx="25" cy="25" r="1.5" fill="%231e90ff" opacity="0.5"/><circle cx="40" cy="15" r="1" fill="%231e90ff" opacity="0.5"/><circle cx="15" cy="40" r="1.5" fill="%231e90ff" opacity="0.05"/><circle cx="35" cy="35" r="1" fill="%231e90ff" opacity="0.05"/><circle cx="45" cy="45" r="1.5" fill="%231e90ff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Components */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 0.5rem 1rem;
+      border: none;
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+
+    .button-sm {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.75rem;
+    }
+
+    .button-lg {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    .button-xl {
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+    }
+
+    .button-primary {
+      background-color: black;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background-color: #333333;
+      transform: translateY(-1px);
+    }
+
+    .button-outline {
+      background-color: transparent;
+      border: 1px solid #EAEAEA;
+      color: #333333;
+    }
+
+    .button-outline:hover {
+      background-color: #F5F5F5;
+      border-color: #DDDDDD;
+      transform: translateY(-1px);
+    }
+
+    .button-ghost {
+      background-color: transparent;
+      color: #666666;
+    }
+
+    .button-ghost:hover {
+      background-color: #F5F5F5;
+      color: black;
+    }
+
+    .button-icon {
+      padding: 0.5rem;
+      border-radius: 9999px;
+    }
+
+    .link {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .link:hover {
+      color: #666666;
+    }
+
+    .border {
+      border: 1px solid #EAEAEA;
+    }
+
+    .border-2 {
+      border: 2px solid #EAEAEA;
+    }
+
+    .border-b {
+      border-bottom: 1px solid #EAEAEA;
+    }
+
+    .border-t {
+      border-top: 1px solid #EAEAEA;
+    }
+
+    .rounded {
+      border-radius: 0.25rem;
+    }
+
+    .rounded-md {
+      border-radius: 0.375rem;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+
+    .rounded-3xl {
+      border-radius: 1.5rem;
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    .aspect-square {
+      aspect-ratio: 1 / 1;
+    }
+
+    .aspect-video {
+      aspect-ratio: 16 / 9;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .sticky {
+      position: sticky;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .top-24 {
+      top: 6rem;
+    }
+
+    .left-0 {
+      left: 0;
+    }
+
+    .right-0 {
+      right: 0;
+    }
+
+    .bottom-0 {
+      bottom: 0;
+    }
+
+    .left-2 {
+      left: 0.5rem;
+    }
+
+    .right-2 {
+      right: 0.5rem;
+    }
+
+    .top-1\/2 {
+      top: 50%;
+    }
+
+    .-translate-y-1\/2 {
+      transform: translateY(-50%);
+    }
+
+    .-top-2 {
+      top: -0.5rem;
+    }
+
+    .-right-2 {
+      right: -0.5rem;
+    }
+
+    .z-10 {
+      z-index: 10;
+    }
+
+    .z-50 {
+      z-index: 50;
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .bg-white {
+      background-color: white;
+    }
+
+    .bg-white\/80 {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .bg-white\/95 {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .bg-black {
+      background-color: black;
+    }
+
+    .bg-gray-50 {
+      background-color: #F9F9F9;
+    }
+
+    .bg-gray-100 {
+      background-color: #F5F5F5;
+    }
+
+    .bg-gray-200 {
+      background-color: #EAEAEA;
+    }
+
+    .bg-gray-800 {
+      background-color: #333333;
+    }
+
+    .bg-gray-900 {
+      background-color: #111111;
+    }
+
+    .object-cover {
+      object-fit: cover;
+    }
+
+    .object-center {
+      object-position: center;
+    }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .transition-transform {
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .transition-colors {
+      transition-property: color, background-color, border-color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 200ms;
+    }
+
+    .hover\:scale-105:hover {
+      transform: scale(1.05);
+    }
+
+    .hover\:scale-110:hover {
+      transform: scale(1.1);
+    }
+
+    .hover\:bg-white:hover {
+      background-color: white;
+    }
+
+    .hover\:bg-gray-50:hover {
+      background-color: #F9F9F9;
+    }
+
+    .hover\:bg-gray-900:hover {
+      background-color: #111111;
+    }
+
+    .hover\:border-gray-300:hover {
+      border-color: #DDDDDD;
+    }
+
+    .hover\:text-gray-500:hover {
+      color: #888888;
+    }
+
+    .hover\:text-gray-600:hover {
+      color: #666666;
+    }
+
+    .hover\:text-white:hover {
+      color: white;
+    }
+
+    .shadow-sm {
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .shadow-md {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .shadow-xl {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .w-4 {
+      width: 1rem;
+    }
+
+    .h-4 {
+      height: 1rem;
+    }
+
+    .w-5 {
+      width: 1.25rem;
+    }
+
+    .h-5 {
+      height: 1.25rem;
+    }
+
+    .w-6 {
+      width: 1.5rem;
+    }
+
+    .h-6 {
+      height: 1.5rem;
+    }
+
+    .w-8 {
+      width: 2rem;
+    }
+
+    .h-8 {
+      height: 2rem;
+    }
+
+    .w-10 {
+      width: 2.5rem;
+    }
+
+    .h-10 {
+      height: 2.5rem;
+    }
+
+    .w-12 {
+      width: 3rem;
+    }
+
+    .h-12 {
+      height: 3rem;
+    }
+
+    .w-16 {
+      width: 4rem;
+    }
+
+    .h-16 {
+      height: 4rem;
+    }
+
+    .w-20 {
+      width: 5rem;
+    }
+
+    .h-20 {
+      height: 5rem;
+    }
+
+    .w-24 {
+      width: 6rem;
+    }
+
+    .h-24 {
+      height: 6rem;
+    }
+
+ /* Product Card Styles */
+.product-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;  /* Wichtig für den Shimmer-Effekt */
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Wichtig für gleiche Höhe */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modify shimmer effect */
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+     90deg,
+        rgba(255,255,255, 0) 0%,
+        rgba(255,255,255, 0.4) 50%,  /* Erhöhte Opazität von 0.2 auf 0.4 */
+        rgba(255,255,255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmerEffect 2s infinite linear;  /* Permanente Animation */
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes shimmerEffect {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+    .product-card-image {
+      position: relative;
+      height: 256px; /* Fixed height */
+      background: #f8f9fa;
+    }
+
+    .product-card-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1; /* Füllt den verfügbaren Platz */
+      padding: 1.5rem;
+    }
+
+    .product-card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card-price {
+      font-weight: 600;
+      color: #2d7d7d;
+    }
+
+    /* Category Card Styles */
+    .category-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      background-color: #F9F9F9;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6));
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+    }
+
+    .category-title {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Feature Section */
+    .feature-card {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 1rem;
+      background-color: white;
+      border: 1px solid #EAEAEA;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-icon {
+      width: 3rem;
+      height: 3rem;
+      background-color: #F9F9F9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+      background: linear-gradient(135deg, #111111 0%, #333333 100%);
+      color: white;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #111111;
+      color: white;
+    }
+
+    .footer-section {
+      margin-bottom: 2rem;
+    }
+
+    .footer-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .footer-link {
+      color: #CCCCCC;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333333;
+      padding-top: 2rem;
+      margin-top: 3rem;
+    }
+
+    .social-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #CCCCCC;
+      transition: color 0.2s;
+    }
+
+    .social-icon:hover {
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .container {
+        width: 95%;
+      }
+
+      .header .container {
+        width: 95%;
+      }
+
+      .text-4xl {
+        font-size: 2rem;
+      }
+
+      .text-5xl {
+        font-size: 2.5rem;
+      }
+
+      .text-6xl {
+        font-size: 3rem;
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+
+      .space-x-8 > * + * {
+        margin-left: 1rem;
+      }
+
+      .py-12 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .py-16 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .py-20 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .py-24 {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .gap-12 {
+        gap: 2rem;
+      }
+
+      .gap-16 {
+        gap: 2rem;
+      }
+
+      .hero {
+        min-height: 70vh;
+        text-align: center;
+      }
+
+      .sm\:flex-row {
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:flex {
+        display: flex;
+      }
+
+      .md\:hidden {
+        display: none;
+      }
+
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .md\:text-left {
+        text-align: left;
+      }
+
+      .md\:flex-row {
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:flex-row {
+        flex-direction: row;
+      }
+
+      .lg\:w-1\/2 {
+        width: 50%;
+      }
+
+      .lg\:w-\[80\%\] {
+        width: 80%;
+      }
+
+      .lg\:order-1 {
+        order: 1;
+      }
+
+      .lg\:order-2 {
+        order: 2;
+      }
+
+      .lg\:items-start {
+        align-items: flex-start;
+      }
+
+      .lg\:justify-between {
+        justify-content: space-between;
+      }
+
+      .lg\:gap-16 {
+        gap: 4rem;
+      }
+
+      .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .lg\:text-6xl {
+        font-size: 3.75rem;
+      }
+    }
+
+    /* Added animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+      40%, 43% { transform: translate3d(0,-30px,0); }
+      70% { transform: translate3d(0,-15px,0); }
+      90% { transform: translate3d(0,-4px,0); }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .animate-slide-up {
+      opacity: 0;
+      animation: slideInUp 0.8s ease forwards;
+    }
+
+    .animate-pulse {
+      animation: pulse 2s infinite;
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-rotate {
+      animation: rotate 20s linear infinite;
+    }
+
+    .animate-bounce {
+      animation: bounce 2s infinite;
+    }
+
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-400 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-500 {
+      animation-delay: 0.5s;
+    }
+
+ /* 3D Molecule Styles */
+.molecule-structure {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.molecule {
+    transform-style: preserve-3d;
+    animation: rotate3D 20s infinite linear;
+}
+
+@keyframes rotate3D {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+.atom {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff, var(--atom-color));
+    box-shadow: 
+        inset -2px -2px 6px rgba(0,0,0,0.3),
+        2px 2px 6px rgba(0,0,0,0.2);
+    transform-style: preserve-3d;
+    --atom-color: #333;
+}
+
+.atom.carbon {
+    --atom-color: #333;
+}
+
+.atom.nitrogen {
+    --atom-color: #0066cc;
+}
+
+.atom.oxygen {
+    --atom-color: #cc0000;
+}
+
+.bond {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(100,100,100,0.8));
+    height: 4px;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Position adjustments for 3D effect */
+.atom:nth-child(odd) {
+    transform: translateZ(20px);
+}
+
+.atom:nth-child(even) {
+    transform: translateZ(-20px);
+}
+
+.bond:nth-child(odd) {
+    transform: translateZ(10px) rotateY(var(--rotation));
+}
+
+.bond:nth-child(even) {
+    transform: translateZ(-10px) rotateY(var(--rotation));
+} 
+
+    /* Warning banner */
+    .warning-banner {
+      background-color: #a6cdf1ee;
+      border-left: 4px solid #1d5fb6;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 0.375rem;
+      animation: pulse 3s infinite;
+    }
+
+   /* Modify shimmer effect */
+.shimmer {
+    position: relative;
+}
+
+.shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255, 0) 0%,
+        rgba(255,255,255, 0.4) 50%,  /* Erhöhte Opazität von 0.2 auf 0.4 */
+        rgba(255,255,255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmerEffect 2s infinite linear;  /* Permanente Animation */
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes shimmerEffect {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+    /* Tooltip */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip .tooltip-text {
+      visibility: hidden;
+      width: 200px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Cart notification */
+    .cart-notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #10B981;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .cart-notification.show {
+      transform: translateX(0);
+    }
+
+    /* Loading spinner */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #333;
+      border-radius: 50%;
+      animation: rotate 1s linear infinite;
+    }
+
+    /* Glowing effect */
+    .glow {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+      to { box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="header py-6">
+      <div class="container flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          ChemLab Pro
+        </a>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="product.html" class="nav-link">Produkte</a>
+          <a href="#" class="nav-link">Forschung</a>
+          <a href="#" class="nav-link">Kontakt</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center space-x-4">
+          <button class="button button-ghost button-icon relative" onclick="toggleCart()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">0</span>
+          </button>
+          <button class="button button-primary">Login</button>
+          <button class="button button-ghost button-icon md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Warning Banner -->
+    <div class="container mt-6">
+      <div class="warning-banner">
+        <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 flex-shrink-0">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <path d="M12 9v4"></path>
+            <path d="M12 17h.01"></path>
+          </svg>
+          <p class="font-medium ml-6">
+            <strong>Wichtiger Hinweis:</strong> Alle Produkte sind ausschließlich für Forschungszwecke bestimmt und nicht für den menschlichen Konsum geeignet. Verkauf nur an lizenzierte Labore und Forschungseinrichtungen.
+          </p>
+        </div>
+      </div>
+    </div>
+
+      <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div class="lg:w-1/2 hero-content animate-fade-in">
+            <h1 class="text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+              Premium Research
+              <span class="block text-gray-600">Chemicals</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed animate-slide-up delay-200">
+              Hochreine Forschungschemikalien für wissenschaftliche Studien und Laboranalysen. 
+              Qualität, Reinheit und Präzision in jedem Produkt.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 animate-slide-up delay-300">
+              <a href="#products" class="button button-primary button-xl">
+                Produkte entdecken
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 ml-2">
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </a>
+              <a href="#" class="button button-outline button-xl">
+                Mehr erfahren
+              </a>
+            </div>
+          </div>
+          <div class="lg:w-1/2 animate-fade-in delay-400">
+            <div class="relative">
+              <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden shadow-xl">
+                <img 
+                    src="O-dsmt.png"  
+                    alt="Research Chemical Visualization"
+                    class="w-full h-full object-cover"
+                >
+              </div>
+              <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-lg animate-float">
+                <div class="flex items-center space-x-3">
+                  <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                      <path d="M10 22v-8h4v8"></path>
+                      <path d="M2 22h20"></path>
+                      <path d="M6 10v4h12v-4a6 6 0 0 0-12 0Z"></path>
+                      <path d="M10 2v4"></path>
+                      <path d="M14 2v4"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-semibold">99.9% Reinheit</div>
+                    <div class="text-xs text-gray-500">Laborgeprüft</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 animate-slide-up">Warum ChemLab Pro wählen</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto animate-slide-up delay-100">
+            Wir sind bestrebt, höchste Qualität und Service in allem zu bieten, was wir tun.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="feature-card animate-slide-up delay-200">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                <path d="M10 22v-8h4v8"></path>
+                <path d="M2 22h20"></path>
+                <path d="M6 10v4h12v-4a6 6 0 0 0-12 0Z"></path>
+                <path d="M10 2v4"></path>
+                <path d="M14 2v4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Höchste Reinheit</h3>
+            <p class="text-gray-600">
+              Jedes Produkt wird sorgfältig synthetisiert und auf höchste Reinheit (>99%) getestet.
+            </p>
+          </div>
+          <div class="feature-card animate-slide-up delay-300">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                <path d="m3.3 7 8.7 5 8.7-5"></path>
+                <path d="M12 22V12"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Diskrete Lieferung</h3>
+            <p class="text-gray-600">
+              Sichere und diskrete Lieferung an verifizierte Forschungseinrichtungen und Labore.
+            </p>
+          </div>
+          <div class="feature-card animate-slide-up delay-400">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Zertifizierte Qualität</h3>
+            <p class="text-gray-600">
+              Alle Produkte werden mit detaillierten Analysezertifikaten und Sicherheitsdatenblättern geliefert.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-20">
+      <div class="container">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 animate-slide-up">Forschungsbereiche</h2>
+          <p class="text-xl text-gray-600 animate-slide-up delay-100">
+            Entdecken Sie unsere sorgfältig ausgewählten Forschungschemikalien
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="category-card aspect-video animate-slide-up delay-200">
+            <img src="odsmt-structure.png" alt="O-dsmt-Structure" class="w-full h-full object-cover">
+            <div class="category-overlay">
+              <h3 class="category-title">Cyclohexylphenole</h3>
+            </div>
+          </div>
+          <div class="category-card aspect-video animate-slide-up delay-300">
+            <img src="SR-17018-Structure.png" alt="SR-17018-Structure" class="w-full h-full object-cover">
+            <div class="category-overlay">
+              <h3 class="category-title">Benzimidazol-Derivate</h3>
+            </div>
+          </div>
+          <div class="category-card aspect-video animate-slide-up delay-400">
+            <img src="IC-26-structure.png" alt="Methiodon-structure" class="w-full h-full object-cover">
+            <div class="category-overlay">
+              <h3 class="category-title">Diphenylpropylamin-Derivate</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+    <div class="container">
+        <div class="flex items-center justify-between mb-12">
+            <div>
+                <h2 class="text-4xl font-bold mb-4 animate-slide-up">Unsere Produkte</h2>
+                <p class="text-xl text-gray-600 animate-slide-up delay-100">
+                    Hochreine Research Chemicals für Ihre Forschung
+                </p>
+            </div>
+            <a href="product.html" class="button button-outline button-lg animate-slide-up delay-200">
+                Alle anzeigen
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 ml-2">
+                    <path d="m9 18 6-6-6-6"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- LSD Product Card -->
+            <div class="product-card animate-slide-up delay-200">
+                <div class="product-card-image">
+                    <img src="powder-img2.jpg" alt="LSD-25" class="w-full h-64 object-cover">
+                    <div class="absolute top-2 right-2 bg-black text-white text-xs px-6 py-1.5 rounded-full shadow-lg">99.8% Reinheit</div>
+                </div>
+                <div class="product-card-content">
+                    <h3 class="product-card-title">O-Desmethyltramadol HCL (O-DSMT)</h3>
+                    <p class="text-sm text-gray-500 mb-2">C₁₅H₂₃NO₂  /  CAS-Nr: 80456-81-1</p>
+                    <div class="flex items-center mb-4">
+                        <div class="flex">★★★★★</div>
+                        <span class="text-sm text-gray-500 ml-2">(42)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <p class="product-card-price">€89.99 / 100µg</p>
+                        <button class="button button-primary button-sm">Hinzufügen</button>
+                    </div>
+                </div>
+            </div> <!-- Schließender Tag für product-card -->
+
+            <!-- DMT Product Card -->
+            <div class="product-card animate-slide-up delay-300">
+                <div class="product-card-image">
+                    <img src="white-powder4.jpg" alt="DMT" class="w-full h-64 object-cover">
+                    <div class="absolute top-2 right-2 bg-black text-white text-xs px-6 py-1.5 rounded-full shadow-lg">99.2% Reinheit</div>
+                </div>
+                <div class="product-card-content">
+                    <h3 class="product-card-title">SR-17018</h3>
+                    <p class="text-sm text-gray-500 mb-2">C₁₉H₁₈Cl₃N₃O  /  CAS-Nr: 2134602-45-0</p>
+                    <div class="flex items-center mb-4">
+                        <div class="flex">★★★★☆</div>
+                        <span class="text-sm text-gray-500 ml-2">(36)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <p class="product-card-price">€149.99 / 50mg</p>
+                        <button class="button button-primary button-sm">Hinzufügen</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Psilocybin Product Card -->
+            <div class="product-card animate-slide-up delay-400">
+                <div class="product-card-image">
+                    <img src="white-pellets1.jpg" alt="Psilocybin" class="w-full h-64 object-cover">
+                    <div class="absolute top-2 right-2 bg-black text-white text-xs px-6 py-1.5 rounded-full shadow-lg">99.5% Reinheit</div>
+                </div>
+                <div class="product-card-content">
+                    <h3 class="product-card-title">Methiodon (IC-26)</h3>
+                    <p class="text-sm text-gray-500 mb-2">C₂₀H₂₇NO₂S  / CAS-Nr: 114538-73-7 </p>
+                    <div class="flex items-center mb-4">
+                        <div class="flex">★★★★☆</div>
+                        <span class="text-sm text-gray-500 ml-2">(28)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <p class="product-card-price">€124.99 / 25mg</p>
+                        <button class="button button-primary button-sm">Hinzufügen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter py-20">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="text-4xl font-bold mb-4 animate-slide-up">Bleiben Sie informiert</h2>
+          <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-slide-up delay-100">
+            Abonnieren Sie unseren Newsletter für exklusive Angebote, neue Produkteinführungen und Forschungsupdates.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto animate-slide-up delay-200">
+            <input type="email" placeholder="E-Mail-Adresse eingeben" class="flex-grow px-6 py-4 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+            <button class="button button-primary button-lg px-8">
+              Abonnieren
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-16">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div class="footer-section">
+            <h3 class="footer-title">ChemLab Pro</h3>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+              Premium Forschungschemikalien für wissenschaftliche Studien. Qualität, Reinheit und Präzision in jedem Produkt.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3 class="footer-title">Schnellzugriff</h3>
+            <div class="space-y-3">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="product.html" class="footer-link">Produkte</a>
+              <a href="#" class="footer-link">Über uns</a>
+              <a href="#" class="footer-link">Kontakt</a>
+              <a href="#" class="footer-link">Forschung</a>
+            </div>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="footer-section">
+            <h3 class="footer-title">Kundenservice</h3>
+            <div class="space-y-3">
+              <a href="#" class="footer-link">Versandinformationen</a>
+              <a href="#" class="footer-link">Rückgabe & Umtausch</a>
+              <a href="#" class="footer-link">Sicherheitsdatenblätter</a>
+              <a href="#" class="footer-link">FAQ</a>
+              <a href="#" class="footer-link">Support</a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-section">
+            <h3 class="footer-title">Newsletter</h3>
+            <p class="text-gray-400 mb-4">Abonnieren Sie unseren Newsletter für exklusive Angebote und Updates.</p>
+            <div class="space-y-3">
+              <input type="email" placeholder="E-Mail-Adresse" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+              <button class="w-full button button-primary py-3">Abonnieren</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+          <p class="text-gray-400 text-sm">
+            © 2024 ChemLab Pro. Alle Rechte vorbehalten.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="footer-link text-sm">Datenschutz</a>
+            <a href="#" class="footer-link text-sm">AGB</a>
+            <a href="#" class="footer-link text-sm">Impressum</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Notification -->
+    <div id="cart-notification" class="cart-notification">
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2">
+          <path d="M20 6 9 17l-5-5"></path>
+        </svg>
+        <span id="notification-text">Produkt zum Warenkorb hinzugefügt!</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cart functionality
+    let cart = [];
+    let cartCount = 0;
+
+    function addToCart(productName, price) {
+      cart.push({ name: productName, price: price });
+      cartCount++;
+      updateCartCount();
+      showNotification(`${productName} wurde zum Warenkorb hinzugefügt!`);
+    }
+
+    function updateCartCount() {
+      document.getElementById('cart-count').textContent = cartCount;
+    }
+
+    function showNotification(message) {
+      const notification = document.getElementById('cart-notification');
+      const text = document.getElementById('notification-text');
+      text.textContent = message;
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+
+    function toggleCart() {
+      // Cart toggle functionality would go here
+      console.log('Cart toggled');
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.animate-slide-up, .animate-fade-in');
+      animatedElements.forEach(el => {
+        observer.observe(el);
+      });
+    });
+
+    // Add loading states and interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add shimmer effect to product cards on hover
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.classList.add('shimmer');
+        });
+        card.addEventListener('mouseleave', function() {
+          this.classList.remove('shimmer');
+        });
+      });
+
+      // Add click animations to buttons
+      const buttons = document.querySelectorAll('.button');
+      buttons.forEach(button => {
+        button.addEventListener('click', function() {
+          this.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            this.style.transform = '';
+          }, 150);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

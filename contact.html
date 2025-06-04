@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt & Impressum - Alchemix Distribution</title>
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border-color: #EAEAEA;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: white;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    /* Layout */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .items-start {
+      align-items: flex-start;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .space-x-4 > * + * {
+      margin-left: 1rem;
+    }
+
+    .space-x-8 > * + * {
+      margin-left: 2rem;
+    }
+
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .h-full {
+      height: 100%;
+    }
+
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .max-w-4xl {
+      max-width: 56rem;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .py-12 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .py-20 {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .p-6 {
+      padding: 1.5rem;
+    }
+
+    .p-8 {
+      padding: 2rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .mt-6 {
+      margin-top: 1.5rem;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .mb-12 {
+      margin-bottom: 3rem;
+    }
+
+    /* Typography */
+    .text-sm {
+      font-size: 0.875rem;
+    }
+
+    .text-base {
+      font-size: 1rem;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+
+    .text-5xl {
+      font-size: 3rem;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .tracking-tight {
+      letter-spacing: -0.025em;
+    }
+
+    .leading-relaxed {
+      line-height: 1.625;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .text-black {
+      color: black;
+    }
+
+    .text-gray-400 {
+      color: #A3A3A3;
+    }
+
+    .text-gray-500 {
+      color: #888888;
+    }
+
+    .text-gray-600 {
+      color: #666666;
+    }
+
+    .text-gray-700 {
+      color: #444444;
+    }
+
+    .text-gray-800 {
+      color: #333333;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: white;
+      border-bottom: 1px solid #EAEAEA;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .header .container {
+      width: 80%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: black;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .logo:hover {
+      color: #333333;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #666666;
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: black;
+    }
+
+    .nav-link.active {
+      color: black;
+    }
+
+    /* Components */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 0.5rem 1rem;
+      border: none;
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+
+    .button-primary {
+      background-color: black;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background-color: #333333;
+      transform: translateY(-1px);
+    }
+
+    .button-outline {
+      background-color: transparent;
+      border: 1px solid #EAEAEA;
+      color: #333333;
+    }
+
+    .button-outline:hover {
+      background-color: #F5F5F5;
+      border-color: #DDDDDD;
+      transform: translateY(-1px);
+    }
+
+    .button-ghost {
+      background-color: transparent;
+      color: #666666;
+    }
+
+    .button-ghost:hover {
+      background-color: #F5F5F5;
+      color: black;
+    }
+
+    .button-icon {
+      padding: 0.5rem;
+      border-radius: 9999px;
+    }
+
+    .border {
+      border: 1px solid #EAEAEA;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+
+    .aspect-square {
+      aspect-ratio: 1 / 1;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .right-0 {
+      right: 0;
+    }
+
+    .-top-2 {
+      top: -0.5rem;
+    }
+
+    .-right-2 {
+      right: -0.5rem;
+    }
+
+    .z-50 {
+      z-index: 50;
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+    }
+
+    .bg-white {
+      background-color: white;
+    }
+
+    .bg-gray-50 {
+      background-color: #F9F9F9;
+    }
+
+    .bg-gray-100 {
+      background-color: #F5F5F5;
+    }
+
+    .bg-gray-900 {
+      background-color: #111111;
+    }
+
+    .object-cover {
+      object-fit: cover;
+    }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .hover\:scale-105:hover {
+      transform: scale(1.05);
+    }
+
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .w-6 {
+      width: 1.5rem;
+    }
+
+    .h-6 {
+      height: 1.5rem;
+    }
+
+    /* Warning banner */
+    .warning-banner {
+      background-color: #a6cdf1ee;
+      border-left: 4px solid #1d5fb6;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 0.375rem;
+    }
+
+    /* Contact Styles */
+    .contact-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info-icon {
+      width: 2rem;
+      height: 2rem;
+      background-color: #f8f9fa;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #EAEAEA;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form-input:focus {
+      outline: none;
+      border-color: #333333;
+    }
+
+    .contact-form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #EAEAEA;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+      margin-bottom: 1rem;
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-form-textarea:focus {
+      outline: none;
+      border-color: #333333;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 300px;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background-color: #f8f9fa;
+    }
+
+    .breadcrumb {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: #333;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #111111;
+      color: white;
+    }
+
+    .footer-section {
+      margin-bottom: 2rem;
+    }
+
+    .footer-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .footer-link {
+      color: #CCCCCC;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333333;
+      padding-top: 2rem;
+      margin-top: 3rem;
+    }
+
+    .social-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #CCCCCC;
+      transition: color 0.2s;
+    }
+
+    .social-icon:hover {
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .container {
+        width: 95%;
+      }
+
+      .header .container {
+        width: 95%;
+      }
+
+      .text-4xl {
+        font-size: 2rem;
+      }
+
+      .text-5xl {
+        font-size: 2.5rem;
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+
+      .space-x-8 > * + * {
+        margin-left: 1rem;
+      }
+
+      .py-12 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .py-16 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .py-20 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .md\:flex {
+        display: flex;
+      }
+
+      .md\:hidden {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="header py-6">
+      <div class="container flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          Alchemix Distribution
+        </a>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link">Home</a>
+              <a href="index.html#products" class="nav-link">Produkte</a>
+              <a href="contact.html" class="nav-link">Kontakt</a>
+              <a href="index.html#categories" class="nav-link">Forschung</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center space-x-4">
+          <button class="button button-ghost button-icon relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          </button>
+          <button class="button button-primary">Login</button>
+          <button class="button button-ghost button-icon md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Warning Banner -->
+    <div class="container mt-6">
+      <div class="warning-banner">
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 flex-shrink-0">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <path d="M12 9v4"></path>
+            <path d="M12 17h.01"></path>
+          </svg>
+          <p class="font-medium ml-6">
+            <strong>Wichtiger Hinweis:</strong> Alle Produkte sind ausschließlich für Forschungszwecke bestimmt und nicht für den menschlichen Konsum geeignet.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-6">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <strong>Kontakt & Impressum</strong>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-12">
+      <div class="container">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+          <h1 class="text-5xl font-bold tracking-tight mb-6">Kontakt & Impressum</h1>
+          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Haben Sie Fragen zu unseren Produkten oder benötigen Sie Unterstützung? 
+            Unser Team steht Ihnen gerne zur Verfügung.
+          </p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="contact-card">
+            <h2 class="text-2xl font-semibold mb-6">Kontaktieren Sie uns</h2>
+            <form action="#" method="POST" class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                <input type="text" id="name" name="name" required class="contact-form-input" placeholder="Ihr vollständiger Name">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-Mail *</label>
+                <input type="email" id="email" name="email" required class="contact-form-input" placeholder="Ihre E-Mail-Adresse">
+              </div>
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Betreff</label>
+                <input type="text" id="subject" name="subject" class="contact-form-input" placeholder="Betreff Ihrer Anfrage">
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Nachricht *</label>
+                <textarea id="message" name="message" required class="contact-form-textarea" placeholder="Ihre Nachricht an uns"></textarea>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="privacy" name="privacy" required class="mr-2">
+                <label for="privacy" class="text-sm text-gray-700">Ich habe die <a href="#datenschutz" class="text-black underline">Datenschutzerklärung</a> gelesen und akzeptiere sie.</label>
+              </div>
+              <button type="submit" class="button button-primary py-3 px-6">Nachricht senden</button>
+            </form>
+          </div>
+
+          <div class="contact-card">
+            <h2 class="text-2xl font-semibold mb-6">Kontaktinformationen</h2>
+            <div class="space-y-6">
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Adresse</h3>
+                  <p class="text-gray-600">
+                    Alchemix Distribution GmbH<br>
+                    Laborstraße 42<br>
+                    10115 Berlin<br>
+                    Deutschland
+                  </p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Telefon</h3>
+                  <p class="text-gray-600">+49 (0) 30 123456789</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">E-Mail</h3>
+                  <p class="text-gray-600">info@Alchemix Distributionpro.de</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Öffnungszeiten</h3>
+                  <p class="text-gray-600">
+                    Montag - Freitag: 9:00 - 17:00 Uhr<br>
+                    Samstag & Sonntag: Geschlossen
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="contact-card mb-12">
+          <h2 class="text-2xl font-semibold mb-6">Unser Standort</h2>
+          <div class="map-container">
+            <!-- Placeholder for map -->
+            <div class="w-full h-full bg-gray-100 flex items-center justify-center">
+              <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 text-gray-400">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <p class="text-gray-500">Interaktive Karte wird geladen...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Impressum Section -->
+        <div class="contact-card mb-12">
+          <h2 class="text-3xl font-semibold mb-6">Impressum</h2>
+          
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Angaben gemäß § 5 TMG</h3>
+              <p class="text-gray-700">
+                Alchemix Distribution GmbH<br>
+                Laborstraße 42<br>
+                10115 Berlin<br>
+                Deutschland
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Vertreten durch</h3>
+              <p class="text-gray-700">
+                Dr. Max Mustermann<br>
+                Dr. Erika Musterfrau
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Kontakt</h3>
+              <p class="text-gray-700">
+                Telefon: +49 (0) 30 123456789<br>
+                E-Mail: info@Alchemix Distributionpro.de
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Registereintrag</h3>
+              <p class="text-gray-700">
+                Eintragung im Handelsregister.<br>
+                Registergericht: Amtsgericht Berlin-Charlottenburg<br>
+                Registernummer: HRB 123456
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Umsatzsteuer-ID</h3>
+              <p class="text-gray-700">
+                Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br>
+                DE 123456789
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Aufsichtsbehörde</h3>
+              <p class="text-gray-700">
+                Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)<br>
+                Kurt-Georg-Kiesinger-Allee 3<br>
+                53175 Bonn
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+              <p class="text-gray-700">
+                Dr. Max Mustermann<br>
+                Laborstraße 42<br>
+                10115 Berlin<br>
+                Deutschland
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Datenschutz Section -->
+        <div id="datenschutz" class="contact-card">
+          <h2 class="text-3xl font-semibold mb-6">Datenschutzerklärung</h2>
+          
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold mb-2">1. Datenschutz auf einen Blick</h3>
+              <p class="text-gray-700 mb-4">
+                Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, 
+                wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert 
+                werden können.
+              </p>
+              <p class="text-gray-700">
+                Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich 
+                und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">2. Allgemeine Hinweise und Pflichtinformationen</h3>
+              <p class="text-gray-700">
+                Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen 
+                Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">3. Datenerfassung auf unserer Website</h3>
+              <p class="text-gray-700 mb-4">
+                <strong>Cookies</strong><br>
+                Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und 
+                enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen.
+              </p>
+              <p class="text-gray-700">
+                <strong>Server-Log-Dateien</strong><br>
+                Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr 
+                Browser automatisch an uns übermittelt.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">4. Kontaktformular</h3>
+              <p class="text-gray-700">
+                Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der 
+                von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns 
+                gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-2">5. Ihre Rechte</h3>
+              <p class="text-gray-700">
+                Sie haben jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten 
+                personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser 
+                Daten zu verlangen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-16">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div class="footer-section">
+            <h3 class="footer-title">Alchemix Distribution</h3>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+              Premium Forschungschemikalien für wissenschaftliche Studien. Qualität, Reinheit und Präzision in jedem Produkt.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3 class="footer-title">Schnellzugriff</h3>
+            <div class="space-y-3">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="index.html#products" class="footer-link">Produkte</a>
+              <a href="contact.html" class="footer-link">Kontakt</a>
+              <a href="index.html#categories" class="footer-link">Forschung</a>
+            </div>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="footer-section">
+            <h3 class="footer-title">Kundenservice</h3>
+            <div class="space-y-3">
+              <a href="#" class="footer-link">Versandinformationen</a>
+              <a href="#" class="footer-link">Rückgabe & Umtausch</a>
+              <a href="#" class="footer-link">Sicherheitsdatenblätter</a>
+              <a href="#" class="footer-link">FAQ</a>
+              <a href="#" class="footer-link">Support</a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-section">
+            <h3 class="footer-title">Newsletter</h3>
+            <p class="text-gray-400 mb-4">Abonnieren Sie unseren Newsletter für exklusive Angebote und Updates.</p>
+            <div class="space-y-3">
+              <input type="email" placeholder="E-Mail-Adresse" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+              <button class="w-full button button-primary py-3">Abonnieren</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+          <p class="text-gray-400 text-sm">
+            © 2024 Alchemix Distribution. Alle Rechte vorbehalten.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#datenschutz" class="footer-link text-sm">Datenschutz</a>
+            <a href="#" class="footer-link text-sm">AGB</a>
+            <a href="#" class="footer-link text-sm">Impressum</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

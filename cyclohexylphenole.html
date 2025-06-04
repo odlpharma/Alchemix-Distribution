@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyclohexylphenole - Alchemix Distribution Pro</title>
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border-color: #EAEAEA;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: white;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    /* Layout */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .space-x-4 > * + * {
+      margin-left: 1rem;
+    }
+
+    .space-x-8 > * + * {
+      margin-left: 2rem;
+    }
+
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .h-full {
+      height: 100%;
+    }
+
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .max-w-4xl {
+      max-width: 56rem;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .py-12 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .py-20 {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .p-6 {
+      padding: 1.5rem;
+    }
+
+    .p-8 {
+      padding: 2rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .mt-6 {
+      margin-top: 1.5rem;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .mb-12 {
+      margin-bottom: 3rem;
+    }
+
+    /* Typography */
+    .text-sm {
+      font-size: 0.875rem;
+    }
+
+    .text-base {
+      font-size: 1rem;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+
+    .text-5xl {
+      font-size: 3rem;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .tracking-tight {
+      letter-spacing: -0.025em;
+    }
+
+    .leading-relaxed {
+      line-height: 1.625;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .text-black {
+      color: black;
+    }
+
+    .text-gray-400 {
+      color: #A3A3A3;
+    }
+
+    .text-gray-500 {
+      color: #888888;
+    }
+
+    .text-gray-600 {
+      color: #666666;
+    }
+
+    .text-gray-700 {
+      color: #444444;
+    }
+
+    .text-gray-800 {
+      color: #333333;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: white;
+      border-bottom: 1px solid #EAEAEA;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .header .container {
+      width: 80%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: black;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .logo:hover {
+      color: #333333;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #666666;
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: black;
+    }
+
+    .nav-link.active {
+      color: black;
+    }
+
+    /* Components */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 0.5rem 1rem;
+      border: none;
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+
+    .button-primary {
+      background-color: black;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background-color: #333333;
+      transform: translateY(-1px);
+    }
+
+    .button-outline {
+      background-color: transparent;
+      border: 1px solid #EAEAEA;
+      color: #333333;
+    }
+
+    .button-outline:hover {
+      background-color: #F5F5F5;
+      border-color: #DDDDDD;
+      transform: translateY(-1px);
+    }
+
+    .button-ghost {
+      background-color: transparent;
+      color: #666666;
+    }
+
+    .button-ghost:hover {
+      background-color: #F5F5F5;
+      color: black;
+    }
+
+    .button-icon {
+      padding: 0.5rem;
+      border-radius: 9999px;
+    }
+
+    .border {
+      border: 1px solid #EAEAEA;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+
+    .aspect-square {
+      aspect-ratio: 1 / 1;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .right-0 {
+      right: 0;
+    }
+
+    .-top-2 {
+      top: -0.5rem;
+    }
+
+    .-right-2 {
+      right: -0.5rem;
+    }
+
+    .z-50 {
+      z-index: 50;
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+    }
+
+    .bg-white {
+      background-color: white;
+    }
+
+    .bg-gray-50 {
+      background-color: #F9F9F9;
+    }
+
+    .bg-gray-100 {
+      background-color: #F5F5F5;
+    }
+
+    .bg-gray-900 {
+      background-color: #111111;
+    }
+
+    .object-cover {
+      object-fit: cover;
+    }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .hover\:scale-105:hover {
+      transform: scale(1.05);
+    }
+
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .w-6 {
+      width: 1.5rem;
+    }
+
+    .h-6 {
+      height: 1.5rem;
+    }
+
+    /* Warning banner */
+    .warning-banner {
+      background-color: #a6cdf1ee;
+      border-left: 4px solid #1d5fb6;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 0.375rem;
+    }
+
+    /* Chemical Info Styles */
+    .chemical-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+    }
+
+    .chemical-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .structure-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      background: #f8f9fa;
+      padding: 1rem;
+    }
+
+    .molecule-3d {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      color: white;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .molecule-3d::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="molecules" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="white" opacity="0.1"/><circle cx="5" cy="5" r="1" fill="white" opacity="0.05"/><circle cx="15" cy="15" r="1.5" fill="white" opacity="0.08"/></pattern></defs><rect width="100" height="100" fill="url(%23molecules)"/></svg>');
+      pointer-events: none;
+    }
+
+    .breadcrumb {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: #333;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .property-item {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+    }
+
+    .property-label {
+      font-size: 0.875rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .property-value {
+      font-weight: 600;
+      color: #333;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #111111;
+      color: white;
+    }
+
+    .footer-section {
+      margin-bottom: 2rem;
+    }
+
+    .footer-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .footer-link {
+      color: #CCCCCC;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333333;
+      padding-top: 2rem;
+      margin-top: 3rem;
+    }
+
+    .social-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #CCCCCC;
+      transition: color 0.2s;
+    }
+
+    .social-icon:hover {
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .container {
+        width: 95%;
+      }
+
+      .header .container {
+        width: 95%;
+      }
+
+      .text-4xl {
+        font-size: 2rem;
+      }
+
+      .text-5xl {
+        font-size: 2.5rem;
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+
+      .space-x-8 > * + * {
+        margin-left: 1rem;
+      }
+
+      .py-12 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .py-16 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .py-20 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .md\:flex {
+        display: flex;
+      }
+
+      .md\:hidden {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="header py-6">
+      <div class="container flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          Alchemix Distribution Pro
+        </a>
+
+          <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#products" class="nav-link">Produkte</a>
+          <a href="#forschung" class="nav-link active">Forschung</a>
+          <a href="contact.html" class="nav-link">Kontakt</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center space-x-4">
+          <button class="button button-ghost button-icon relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          </button>
+          <button class="button button-primary">Login</button>
+          <button class="button button-ghost button-icon md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Warning Banner -->
+    <div class="container mt-6">
+      <div class="warning-banner">
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 flex-shrink-0">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <path d="M12 9v4"></path>
+            <path d="M12 17h.01"></path>
+          </svg>
+          <p class="font-medium ml-6">
+            <strong>Wichtiger Hinweis:</strong> Alle Produkte sind ausschließlich für Forschungszwecke bestimmt und nicht für den menschlichen Konsum geeignet.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-6">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <a href="#forschung">Forschung</a> / <strong>Cyclohexylphenole</strong>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-12">
+      <div class="container">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+          <h1 class="text-5xl font-bold tracking-tight mb-6">Cyclohexylphenole</h1>
+          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Cyclohexylphenole sind eine wichtige Klasse von Forschungschemikalien mit einzigartigen pharmakologischen Eigenschaften. 
+            Diese Verbindungen zeichnen sich durch ihre charakteristische Cyclohexyl-Phenol-Struktur aus und finden breite Anwendung 
+            in der neurochemischen Forschung.
+          </p>
+        </div>
+
+        <!-- Chemical Structure Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="chemical-card">
+            <h2 class="text-2xl font-semibold mb-4">Strukturformel</h2>
+            <div class="text-center">
+              <img src="odsmt-structure.png" alt="O-DSMT Strukturformel" class="structure-image mx-auto">
+              <p class="text-sm text-gray-600 mt-4">
+                <strong>Beispiel:</strong> O-Desmethyltramadol (O-DSMT)<br>
+                Molekularformel: C₁₅H₂₃NO₂<br>
+                CAS-Nummer: 80456-81-1
+              </p>
+            </div>
+          </div>
+
+          <div class="chemical-card">
+            <h2 class="text-2xl font-semibold mb-4">3D-Molekülstruktur</h2>
+            <div class="molecule-3d">
+              <div class="relative z-10">
+                <div class="text-6xl mb-4">⚛️</div>
+                <h3 class="text-xl font-semibold">Interaktive 3D-Darstellung</h3>
+                <p class="text-sm opacity-90 mt-2">
+                  Räumliche Anordnung der Atome<br>
+                  in der Cyclohexylphenol-Struktur
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Properties Section -->
+        <div class="chemical-card mb-12">
+          <h2 class="text-3xl font-semibold mb-6">Chemische Eigenschaften</h2>
+          <div class="property-grid">
+            <div class="property-item">
+              <div class="property-label">Molekulargewicht</div>
+              <div class="property-value">249.35 g/mol</div>
+            </div>
+            <div class="property-item">
+              <div class="property-label">Schmelzpunkt</div>
+              <div class="property-value">180-182°C</div>
+            </div>
+            <div class="property-item">
+              <div class="property-label">Löslichkeit</div>
+              <div class="property-value">Wasserlöslich</div>
+            </div>
+            <div class="property-item">
+              <div class="property-label">Reinheit</div>
+              <div class="property-value">≥99.8%</div>
+            </div>
+            <div class="property-item">
+              <div class="property-label">Stabilität</div>
+              <div class="property-value">Stabil bei RT</div>
+            </div>
+            <div class="property-item">
+              <div class="property-label">Lagerung</div>
+              <div class="property-value">-20°C, trocken</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research Applications -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="chemical-card">
+            <h2 class="text-2xl font-semibold mb-4">Forschungsanwendungen</h2>
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Neurochemische Studien</h3>
+                <p class="text-gray-700">
+                  Untersuchung der Wirkung auf Neurotransmitter-Systeme, insbesondere 
+                  Serotonin- und Noradrenalin-Wiederaufnahmehemmung.
+                </p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Pharmakologische Forschung</h3>
+                <p class="text-gray-700">
+                  Analyse der Rezeptorbindung und Signaltransduktion in verschiedenen 
+                  Zelllinien und Gewebeproben.
+                </p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Metabolismus-Studien</h3>
+                <p class="text-gray-700">
+                  Untersuchung der metabolischen Pathways und Biotransformation 
+                  in Leber-Mikrosomen.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="chemical-card">
+            <h2 class="text-2xl font-semibold mb-4">Beispielmoleküle</h2>
+            <div class="space-y-4">
+              <div class="border rounded-lg p-4">
+                <img src="odsmt-structure.png" alt="O-DSMT Molekül" class="w-full h-32 object-cover rounded mb-3">
+                <h4 class="font-semibold">O-Desmethyltramadol</h4>
+                <p class="text-sm text-gray-600">Aktiver Metabolit von Tramadol</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Safety Information -->
+        <div class="chemical-card mb-12">
+          <h2 class="text-3xl font-semibold mb-6">Sicherheitsinformationen</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-semibold text-lg mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                </svg>
+                Schutzausrüstung
+              </h3>
+              <ul class="text-sm space-y-1">
+                <li>• Schutzbrille tragen</li>
+                <li>• Handschuhe verwenden</li>
+                <li>• Laborkittel erforderlich</li>
+                <li>• Abzug verwenden</li>
+              </ul>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-semibold text-lg mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2">
+                  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                  <path d="M12 9v4"></path>
+                  <path d="M12 17h.01"></path>
+                </svg>
+                Gefahrenhinweise
+              </h3>
+              <ul class="text-sm space-y-1">
+                <li>• Nur für Forschung</li>
+                <li>• Nicht für Konsum</li>
+                <li>• Potentiell gefährlich</li>
+                <li>• Fachgerechte Entsorgung</li>
+              </ul>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-semibold text-lg mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2">
+                  <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                  <path d="m3.3 7 8.7 5 8.7-5"></path>
+                  <path d="M12 22V12"></path>
+                </svg>
+                Lagerung
+              </h3>
+              <ul class="text-sm space-y-1">
+                <li>• Kühl und trocken</li>
+                <li>• Vor Licht schützen</li>
+                <li>• Verschlossen halten</li>
+                <li>• Temperatur: -20°C</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center">
+          <h2 class="text-3xl font-semibold mb-4">Interesse an Cyclohexylphenolen?</h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Kontaktieren Sie uns für weitere Informationen oder um eine Bestellung aufzugeben.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="index.html" class="button button-primary px-8 py-3">
+              Zurück zur Hauptseite
+            </a>
+            <a href="#" class="button button-outline px-8 py-3">
+              Kontakt aufnehmen
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-16">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div class="footer-section">
+            <h3 class="footer-title">Alchemix Distribution Pro</h3>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+              Premium Forschungschemikalien für wissenschaftliche Studien. Qualität, Reinheit und Präzision in jedem Produkt.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3 class="footer-title">Schnellzugriff</h3>
+            <div class="space-y-3">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="product.html" class="footer-link">Produkte</a>
+              <a href="#" class="footer-link">Über uns</a>
+              <a href="#" class="footer-link">Kontakt</a>
+              <a href="#" class="footer-link">Forschung</a>
+            </div>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="footer-section">
+            <h3 class="footer-title">Kundenservice</h3>
+            <div class="space-y-3">
+              <a href="#" class="footer-link">Versandinformationen</a>
+              <a href="#" class="footer-link">Rückgabe & Umtausch</a>
+              <a href="#" class="footer-link">Sicherheitsdatenblätter</a>
+              <a href="#" class="footer-link">FAQ</a>
+              <a href="#" class="footer-link">Support</a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-section">
+            <h3 class="footer-title">Newsletter</h3>
+            <p class="text-gray-400 mb-4">Abonnieren Sie unseren Newsletter für exklusive Angebote und Updates.</p>
+            <div class="space-y-3">
+              <input type="email" placeholder="E-Mail-Adresse" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+              <button class="w-full button button-primary py-3">Abonnieren</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+          <p class="text-gray-400 text-sm">
+            © 2024 Alchemix Distribution Pro. Alle Rechte vorbehalten.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="footer-link text-sm">Datenschutz</a>
+            <a href="#" class="footer-link text-sm">AGB</a>
+            <a href="#" class="footer-link text-sm">Impressum</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
