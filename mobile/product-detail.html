@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Research Chemical - ChemLab Pro</title>
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border-color: #EAEAEA;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: white;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    /* Layout */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .container-wide {
+      width: 95%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .items-start {
+      align-items: flex-start;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .space-x-2 > * + * {
+      margin-left: 0.5rem;
+    }
+
+    .space-x-4 > * + * {
+      margin-left: 1rem;
+    }
+
+    .space-x-6 > * + * {
+      margin-left: 1.5rem;
+    }
+
+    .space-x-8 > * + * {
+      margin-left: 2rem;
+    }
+
+    .space-y-2 > * + * {
+      margin-top: 0.5rem;
+    }
+
+    .space-y-3 > * + * {
+      margin-top: 0.75rem;
+    }
+
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
+    }
+
+    .space-y-8 > * + * {
+      margin-top: 2rem;
+    }
+
+    .gap-3 {
+      gap: 0.75rem;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .gap-12 {
+      gap: 3rem;
+    }
+
+    .gap-16 {
+      gap: 4rem;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .h-full {
+      height: 100%;
+    }
+
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .flex-grow {
+      flex-grow: 1;
+    }
+
+    .flex-shrink-0 {
+      flex-shrink: 0;
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .py-12 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .p-3 {
+      padding: 0.75rem;
+    }
+
+    .p-4 {
+      padding: 1rem;
+    }
+
+    .pr-4 {
+      padding-right: 1rem;
+    }
+
+    .mt-1 {
+      margin-top: 0.25rem;
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+
+    .mt-3 {
+      margin-top: 0.75rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .mt-6 {
+      margin-top: 1.5rem;
+    }
+
+    .mt-8 {
+      margin-top: 2rem;
+    }
+
+    .mt-12 {
+      margin-top: 3rem;
+    }
+
+    .mt-16 {
+      margin-top: 4rem;
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .mb-3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .ml-2 {
+      margin-left: 0.5rem;
+    }
+
+    /* Typography */
+    .text-xs {
+      font-size: 0.75rem;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+    }
+
+    .text-base {
+      font-size: 1rem;
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+
+    .text-5xl {
+      font-size: 3rem;
+    }
+
+    .font-light {
+      font-weight: 300;
+    }
+
+    .font-normal {
+      font-weight: 400;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .tracking-tight {
+      letter-spacing: -0.025em;
+    }
+
+    .tracking-wide {
+      letter-spacing: 0.025em;
+    }
+
+    .leading-relaxed {
+      line-height: 1.625;
+    }
+
+    .leading-tight {
+      line-height: 1.25;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .text-black {
+      color: black;
+    }
+
+    .text-gray-300 {
+      color: #DDDDDD;
+    }
+
+    .text-gray-400 {
+      color: #A3A3A3;
+    }
+
+    .text-gray-500 {
+      color: #888888;
+    }
+
+    .text-gray-600 {
+      color: #666666;
+    }
+
+    .text-gray-700 {
+      color: #444444;
+    }
+
+    .text-gray-800 {
+      color: #333333;
+    }
+
+    .text-yellow-400 {
+      color: #FBBF24;
+    }
+
+    .text-red-500 {
+      color: #EF4444;
+    }
+
+    .text-green-600 {
+      color: #059669;
+    }
+
+    .text-blue-600 {
+      color: #2563EB;
+    }
+
+    .text-purple-600 {
+      color: #9333EA;
+    }
+
+    /* Header Styles */
+    .header {
+      background-color: white;
+      border-bottom: 1px solid #EAEAEA;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .header .container {
+      width: 80%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: black;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .logo:hover {
+      color: #333333;
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #666666;
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: black;
+    }
+
+    .nav-link.active {
+      color: black;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1.5rem;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: black;
+    }
+
+    /* Components */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 0.5rem 1rem;
+      border: none;
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+
+    .button-sm {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.75rem;
+    }
+
+    .button-lg {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+
+    .button-primary {
+      background-color: black;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background-color: #333333;
+    }
+
+    .button-outline {
+      background-color: transparent;
+      border: 1px solid #EAEAEA;
+      color: #333333;
+    }
+
+    .button-outline:hover {
+      background-color: #F5F5F5;
+      border-color: #DDDDDD;
+    }
+
+    .button-ghost {
+      background-color: transparent;
+      color: #666666;
+    }
+
+    .button-ghost:hover {
+      background-color: #F5F5F5;
+      color: black;
+    }
+
+    .button-icon {
+      padding: 0.5rem;
+      border-radius: 9999px;
+    }
+
+    .link {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .link:hover {
+      color: #666666;
+    }
+
+    .border {
+      border: 1px solid #EAEAEA;
+    }
+
+    .border-2 {
+      border: 2px solid #EAEAEA;
+    }
+
+    .border-b {
+      border-bottom: 1px solid #EAEAEA;
+    }
+
+    .border-t {
+      border-top: 1px solid #EAEAEA;
+    }
+
+    .rounded {
+      border-radius: 0.25rem;
+    }
+
+    .rounded-md {
+      border-radius: 0.375rem;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    .rounded-l-full {
+      border-top-left-radius: 9999px;
+      border-bottom-left-radius: 9999px;
+    }
+
+    .rounded-r-full {
+      border-top-right-radius: 9999px;
+      border-bottom-right-radius: 9999px;
+    }
+
+    .aspect-square {
+      aspect-ratio: 1 / 1;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .sticky {
+      position: sticky;
+    }
+
+    .top-24 {
+      top: 6rem;
+    }
+
+    .left-2 {
+      left: 0.5rem;
+    }
+
+    .right-2 {
+      right: 0.5rem;
+    }
+
+    .top-1\/2 {
+      top: 50%;
+    }
+
+    .-translate-y-1\/2 {
+      transform: translateY(-50%);
+    }
+
+    .z-10 {
+      z-index: 10;
+    }
+
+    .z-50 {
+      z-index: 50;
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .bg-white {
+      background-color: white;
+    }
+
+    .bg-white\/80 {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .bg-white\/95 {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .bg-black {
+      background-color: black;
+    }
+
+    .bg-gray-50 {
+      background-color: #F9F9F9;
+    }
+
+    .bg-gray-100 {
+      background-color: #F5F5F5;
+    }
+
+    .bg-gray-200 {
+      background-color: #EAEAEA;
+    }
+
+    .bg-gray-900 {
+      background-color: #111111;
+    }
+
+    .bg-yellow-100 {
+      background-color: #FEF3C7;
+    }
+
+    .bg-red-100 {
+      background-color: #FEE2E2;
+    }
+
+    .bg-green-100 {
+      background-color: #DCFCE7;
+    }
+
+    .fill-red-500 {
+      fill: #EF4444;
+    }
+
+    .fill-yellow-400 {
+      fill: #FBBF24;
+    }
+
+    .object-cover {
+      object-fit: cover;
+    }
+
+    .object-center {
+      object-position: center;
+    }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .transition-transform {
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .transition-colors {
+      transition-property: color, background-color, border-color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 200ms;
+    }
+
+    .hover\:scale-105:hover {
+      transform: scale(1.05);
+    }
+
+    .hover\:scale-110:hover {
+      transform: scale(1.1);
+    }
+
+    .hover\:bg-white:hover {
+      background-color: white;
+    }
+
+    .hover\:bg-gray-50:hover {
+      background-color: #F9F9F9;
+    }
+
+    .hover\:bg-gray-900:hover {
+      background-color: #111111;
+    }
+
+    .hover\:border-gray-300:hover {
+      border-color: #DDDDDD;
+    }
+
+    .hover\:text-gray-500:hover {
+      color: #888888;
+    }
+
+    .hover\:text-gray-600:hover {
+      color: #666666;
+    }
+
+    .hover\:ring-1:hover {
+      box-shadow: 0 0 0 1px #EAEAEA;
+    }
+
+    .ring-2 {
+      box-shadow: 0 0 0 2px black;
+    }
+
+    .ring-offset-2 {
+      box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+    }
+
+    .shadow-sm {
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .shadow-md {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .w-4 {
+      width: 1rem;
+    }
+
+    .h-4 {
+      height: 1rem;
+    }
+
+    .w-5 {
+      width: 1.25rem;
+    }
+
+    .h-5 {
+      height: 1.25rem;
+    }
+
+    .w-6 {
+      width: 1.5rem;
+    }
+
+    .h-6 {
+      height: 1.5rem;
+    }
+
+    .w-8 {
+      width: 2rem;
+    }
+
+    .h-8 {
+      height: 2rem;
+    }
+
+    .w-10 {
+      width: 2.5rem;
+    }
+
+    .h-10 {
+      height: 2.5rem;
+    }
+
+    .w-12 {
+      width: 3rem;
+    }
+
+    .h-12 {
+      height: 3rem;
+    }
+
+    .w-16 {
+      width: 4rem;
+    }
+
+    .h-16 {
+      height: 4rem;
+    }
+
+    .list-disc {
+      list-style-type: disc;
+    }
+
+    .pl-5 {
+      padding-left: 1.25rem;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .tabs-list {
+      display: flex;
+      border-bottom: 1px solid #EAEAEA;
+      background-color: #F9F9F9;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .tab-trigger {
+      padding: 1rem 1.5rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      color: #666666;
+      background-color: transparent;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .tab-trigger:hover {
+      color: black;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .tab-trigger.active {
+      border-bottom-color: black;
+      color: black;
+      background-color: white;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2rem;
+      background-color: white;
+      border: 1px solid #EAEAEA;
+      border-top: none;
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Product Card Styles */
+    .product-card {
+      background-color: white;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      transition: all 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-color: #EAEAEA;
+    }
+
+    .product-card-image {
+      position: relative;
+      overflow: hidden;
+      background-color: #F9F9F9;
+    }
+
+    .product-card-content {
+      padding: 1.5rem;
+    }
+
+    .product-card-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #111111;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .product-card-price {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #666666;
+    }
+
+    /* Warning banner */
+    .warning-banner {
+      background-color: #FEF3C7;
+      border-left: 4px solid #F59E0B;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 0.375rem;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: #111111;
+      color: white;
+      margin-top: 4rem;
+    }
+
+    .footer-section {
+      margin-bottom: 2rem;
+    }
+
+    .footer-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .footer-link {
+      color: #CCCCCC;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333333;
+      padding-top: 2rem;
+      margin-top: 3rem;
+    }
+
+    .social-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #CCCCCC;
+      transition: color 0.2s;
+    }
+
+    .social-icon:hover {
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .container {
+        width: 95%;
+      }
+
+      .header .container {
+        width: 95%;
+      }
+
+      .text-4xl {
+        font-size: 2rem;
+      }
+
+      .text-5xl {
+        font-size: 2.5rem;
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+
+      .space-x-8 > * + * {
+        margin-left: 1rem;
+      }
+
+      .py-12 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .py-16 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .gap-12 {
+        gap: 2rem;
+      }
+
+      .gap-16 {
+        gap: 2rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:flex {
+        display: flex;
+      }
+
+      .md\:hidden {
+        display: none;
+      }
+
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .md\:text-left {
+        text-align: left;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lg\:flex-row {
+        flex-direction: row;
+      }
+
+      .lg\:w-1\/2 {
+        width: 50%;
+      }
+
+      .lg\:w-\[80\%\] {
+        width: 80%;
+      }
+
+      .lg\:order-1 {
+        order: 1;
+      }
+
+      .lg\:order-2 {
+        order: 2;
+      }
+
+      .lg\:items-start {
+        align-items: flex-start;
+      }
+
+      .lg\:justify-between {
+        justify-content: space-between;
+      }
+
+      .lg\:gap-16 {
+        gap: 4rem;
+      }
+
+      .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    /* Molecular structure display */
+    .molecular-structure {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 1rem;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Courier New', monospace;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      min-height: 200px;
+    }
+
+    /* Purity badge */
+    .purity-badge {
+      background: #DCFCE7;
+      color: #166534;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: 1px solid #BBF7D0;
+    }
+
+    /* Quantity selector */
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      border: 1px solid #EAEAEA;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .quantity-selector button {
+      padding: 0.75rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .quantity-selector button:hover {
+      background-color: #F5F5F5;
+    }
+
+    .quantity-selector span {
+      padding: 0.75rem 1rem;
+      min-width: 3rem;
+      text-align: center;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen bg-white flex flex-col">
+    <!-- Header -->
+    <header class="header py-6">
+      <div class="container flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          ChemLab Pro
+        </a>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="#" class="nav-link active">Produkte</a>
+          <a href="#" class="nav-link">Forschung</a>
+          <a href="#" class="nav-link">Kontakt</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center space-x-4">
+          <button class="button button-ghost button-icon relative" onclick="toggleCart()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          </button>
+          <button class="button button-primary">Login</button>
+          <button class="button button-ghost button-icon md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Warning Banner -->
+    <div class="container mt-6">
+      <div class="warning-banner">
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <path d="M12 9v4"></path>
+            <path d="M12 17h.01"></path>
+          </svg>
+          <p class="font-medium">
+            <strong>Wichtiger Hinweis:</strong> Dieses Produkt ist ausschließlich für Forschungszwecke bestimmt und nicht für den menschlichen Konsum geeignet. Verkauf nur an lizenzierte Labore und Forschungseinrichtungen.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="flex-grow py-12">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="mb-8">
+          <div class="flex items-center space-x-2 text-sm text-gray-500">
+            <a href="index.html" class="hover:text-gray-700">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+            <a href="#" class="hover:text-gray-700">Produkte</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+            <span id="breadcrumb-product" class="text-gray-700">Research Chemical</span>
+          </div>
+        </nav>
+
+        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 lg:gap-16">
+          <!-- Product Image -->
+          <div class="lg:w-1/2 order-1 lg:order-1 sticky top-24">
+            <div class="relative aspect-square">
+              <div class="relative w-full h-full overflow-hidden rounded-2xl bg-gray-50">
+                <div id="main-image" class="molecular-structure">
+                  <div id="molecular-formula">C₂₀H₂₅N₃O</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center gap-3 sm:gap-4 mt-6" id="thumbnail-container">
+              <!-- Thumbnails will be inserted here by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="lg:w-1/2 space-y-8 order-2 lg:order-2">
+            <div>
+              <h1 id="product-title" class="text-4xl sm:text-5xl font-bold tracking-tight mb-4 leading-tight">Research Chemical</h1>
+              <div class="mb-4">
+                <div id="product-formula" class="text-lg text-gray-600 mb-2">Molekularformel: C₂₀H₂₅N₃O</div>
+                <div id="product-iupac" class="text-sm text-gray-500 mb-3">IUPAC-Name: Loading...</div>
+              </div>
+              <div class="flex items-center space-x-2 mb-4">
+                <div id="star-rating" class="flex">
+                  <!-- Stars will be inserted here by JavaScript -->
+                </div>
+                <span id="rating-text" class="text-sm text-gray-500">(5.0 / 42 Bewertungen)</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span id="product-price" class="text-3xl font-bold">€89.99</span>
+                <span id="product-unit" class="text-lg text-gray-500">/ 100µg</span>
+                <span id="purity-badge" class="purity-badge">99.8% Reinheit</span>
+              </div>
+            </div>
+
+            <div id="product-description" class="text-gray-700 text-lg leading-relaxed">
+              Hochreines Forschungschemikalie für wissenschaftliche Studien und Laboranalysen. 
+              Dieses Produkt wird unter strengsten Qualitätskontrollen hergestellt und ist ausschließlich 
+              für den Einsatz in lizenzierten Forschungseinrichtungen bestimmt.
+            </div>
+
+            <div class="space-y-4">
+              <h2 class="text-xl font-semibold">Menge</h2>
+              <div class="flex flex-wrap gap-3" id="quantity-selector">
+                <button data-quantity="1" class="px-4 py-2 rounded-full flex items-center justify-center border-2 text-sm font-medium transition-all border-black bg-black text-white">
+                  1x
+                </button>
+                <button data-quantity="3" class="px-4 py-2 rounded-full flex items-center justify-center border-2 text-sm font-medium transition-all border-gray-200 hover:border-gray-300">
+                  3x
+                </button>
+                <button data-quantity="5" class="px-4 py-2 rounded-full flex items-center justify-center border-2 text-sm font-medium transition-all border-gray-200 hover:border-gray-300">
+                  5x
+                </button>
+                <button data-quantity="10" class="px-4 py-2 rounded-full flex items-center justify-center border-2 text-sm font-medium transition-all border-gray-200 hover:border-gray-300">
+                  10x
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="quantity-selector">
+                <button id="decrement">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                    <path d="M5 12h14"></path>
+                  </svg>
+                </button>
+                <span id="quantity">1</span>
+                <button id="increment">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                    <path d="M12 5v14"></path>
+                    <path d="M5 12h14"></path>
+                  </svg>
+                </button>
+              </div>
+              <button id="add-to-cart" class="flex-grow button button-primary py-6 text-lg font-medium">
+                In Warenkorb
+              </button>
+              <button id="toggle-favorite" class="button button-outline p-3">
+                <svg id="heart-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                </svg>
+                <span class="sr-only">Zu Favoriten hinzufügen</span>
+              </button>
+            </div>
+
+            <!-- Shipping Info -->
+            <div class="bg-gray-50 rounded-lg p-4 space-y-3">
+              <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-600">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                </svg>
+                <span class="text-sm font-medium">Sichere Lieferung an verifizierte Einrichtungen</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-600">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                  <line x1="16" x2="8" y1="13" y2="13"></line>
+                  <line x1="16" x2="8" y1="17" y2="17"></line>
+                  <polyline points="10,9 9,9 8,9"></polyline>
+                </svg>
+                <span class="text-sm font-medium">Analysezertifikat inklusive</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-purple-600">
+                  <path d="M10 22v-8h4v8"></path>
+                  <path d="M2 22h20"></path>
+                  <path d="M6 10v4h12v-4a6 6 0 0 0-12 0Z"></path>
+                  <path d="M10 2v4"></path>
+                  <path d="M14 2v4"></path>
+                </svg>
+                <span class="text-sm font-medium">Laborgeprüfte Reinheit</span>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <span class="text-sm font-medium">Teilen:</span>
+              <button class="text-gray-400 hover:text-gray-500 transition-colors">
+                <span class="sr-only">Auf Facebook teilen</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </button>
+              <button class="text-gray-400 hover:text-gray-500 transition-colors">
+                <span class="sr-only">Auf Twitter teilen</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </button>
+              <button class="text-gray-400 hover:text-gray-500 transition-colors">
+                <span class="sr-only">Per E-Mail teilen</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Details Tabs -->
+        <div class="mt-16">
+          <div class="tabs">
+            <div class="tabs-list">
+              <button class="tab-trigger active" data-tab="details">Produktdetails</button>
+              <button class="tab-trigger" data-tab="specs">Spezifikationen</button>
+              <button class="tab-trigger" data-tab="safety">Sicherheit</button>
+            </div>
+            <div id="details" class="tab-content active">
+              <div class="space-y-6">
+                <p id="detailed-description" class="text-gray-700 text-lg leading-relaxed">
+                  Detaillierte Produktbeschreibung wird hier angezeigt...
+                </p>
+                <div>
+                  <h3 class="text-lg font-semibold mb-3">Anwendungsbereiche</h3>
+                  <ul id="applications-list" class="list-disc pl-5 space-y-2 text-gray-700">
+                    <!-- Applications will be inserted here by JavaScript -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="specs" class="tab-content">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                  <tbody id="specifications-table">
+                    <!-- Specifications will be inserted here by JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="safety" class="tab-content">
+              <div class="space-y-6">
+                <div class="bg-red-100 border border-red-200 rounded-lg p-4">
+                  <h3 class="text-lg font-semibold text-red-800 mb-2">Sicherheitshinweise</h3>
+                  <ul class="list-disc pl-5 space-y-1 text-red-700">
+                    <li>Nur für den Einsatz in lizenzierten Forschungseinrichtungen</li>
+                    <li>Nicht für den menschlichen Konsum bestimmt</li>
+                    <li>Unter kontrollierten Bedingungen lagern</li>
+                    <li>Persönliche Schutzausrüstung verwenden</li>
+                    <li>Bei Hautkontakt sofort mit Wasser spülen</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold mb-3">Lagerung</h3>
+                  <p class="text-gray-700">
+                    Kühl, trocken und lichtgeschützt lagern. Temperatur: 2-8°C. 
+                    Von Kindern und unbefugten Personen fernhalten.
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold mb-3">Entsorgung</h3>
+                  <p class="text-gray-700">
+                    Gemäß lokalen Vorschriften für Chemikalienabfälle entsorgen. 
+                    Nicht in Abwasser oder Umwelt gelangen lassen.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-16">
+          <div class="flex items-center justify-between mb-8">
+            <h2 class="text-3xl font-bold">Ähnliche Produkte</h2>
+            <a href="index.html" class="button button-outline">Alle Produkte anzeigen</a>
+          </div>
+          <div id="related-products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Related products will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-16">
+      <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div class="footer-section">
+            <h3 class="footer-title">ChemLab Pro</h3>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+              Premium Forschungschemikalien für wissenschaftliche Studien. Qualität, Reinheit und Präzision in jedem Produkt.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-section">
+            <h3 class="footer-title">Schnellzugriff</h3>
+            <div class="space-y-3">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="#" class="footer-link">Produkte</a>
+              <a href="#" class="footer-link">Über uns</a>
+              <a href="#" class="footer-link">Kontakt</a>
+              <a href="#" class="footer-link">Forschung</a>
+            </div>
+          </div>
+
+          <!-- Customer Service -->
+          <div class="footer-section">
+            <h3 class="footer-title">Kundenservice</h3>
+            <div class="space-y-3">
+              <a href="#" class="footer-link">Versandinformationen</a>
+              <a href="#" class="footer-link">Rückgabe & Umtausch</a>
+              <a href="#" class="footer-link">Sicherheitsdatenblätter</a>
+              <a href="#" class="footer-link">FAQ</a>
+              <a href="#" class="footer-link">Support</a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-section">
+            <h3 class="footer-title">Newsletter</h3>
+            <p class="text-gray-400 mb-4">Abonnieren Sie unseren Newsletter für exklusive Angebote und Updates.</p>
+            <div class="space-y-3">
+              <input type="email" placeholder="E-Mail-Adresse" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white transition-colors">
+              <button class="w-full button button-primary py-3">Abonnieren</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+          <p class="text-gray-400 text-sm">
+            © 2024 ChemLab Pro. Alle Rechte vorbehalten.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="footer-link text-sm">Datenschutz</a>
+            <a href="#" class="footer-link text-sm">AGB</a>
+            <a href="#" class="footer-link text-sm">Impressum</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Product data
+    const products = {
+      'lsd25': {
+        id: 'lsd25',
+        name: 'LSD-25 (Lysergsäurediethylamid)',
+        formula: 'C₂₀H₂₅N₃O',
+        iupac: '(6aR,9R)-N,N-diethyl-7-methyl-4,6,6a,7,8,9-hexahydroindolo[4,3-fg]quinoline-9-carboxamide',
+        price: 89.99,
+        unit: '100µg',
+        purity: '99.8%',
+        rating: 5.0,
+        reviews: 42,
+        description: 'Hochreines LSD-25 für neurochemische Forschung und Bewusstseinsstudien. Diese Substanz ist von höchster Qualität und wird unter strengsten Laborbedingungen synthetisiert. Ideal für Studien zur Serotoninrezeptor-Aktivität, Neuroplastizität und psychedelischen Therapieforschung.',
+        applications: [
+          'Neurochemische Forschung',
+          'Serotoninrezeptor-Studien',
+          'Bewusstseinsforschung',
+          'Neuroplastizitäts-Studien',
+          'Psychedelische Therapieforschung'
+        ],
+        specifications: {
+          'CAS-Nummer': '50-37-3',
+          'Molekulargewicht': '323.43 g/mol',
+          'Schmelzpunkt': '80-85°C',
+          'Löslichkeit': 'Löslich in Ethanol, DMSO',
+          'Lagerung': 'Kühl, trocken, lichtgeschützt',
+          'Halbwertszeit': '3-5 Stunden',
+          'Reinheit': '≥99.8%'
+        }
+      },
+      'dmt': {
+        id: 'dmt',
+        name: 'DMT (N,N-Dimethyltryptamin)',
+        formula: 'C₁₂H₁₆N₂',
+        iupac: 'N,N-dimethyl-2-(1H-indol-3-yl)ethanamine',
+        price: 149.99,
+        unit: '50mg',
+        purity: '99.2%',
+        rating: 4.0,
+        reviews: 36,
+        description: 'Hochreines N,N-Dimethyltryptamin für neurobiologische und bewusstseinserweiternde Forschung. Synthetisiert unter kontrollierten Bedingungen für maximale Reinheit. Ideal für Studien zur endogenen DMT-Produktion, Traum-Forschung und Nahtoderfahrungen.',
+        applications: [
+          'Neurobiologische Forschung',
+          'Endogene DMT-Studien',
+          'Traum-Forschung',
+          'Bewusstseinsforschung',
+          'Pinealdrüsen-Studien'
+        ],
+        specifications: {
+          'CAS-Nummer': '61-50-7',
+          'Molekulargewicht': '188.27 g/mol',
+          'Schmelzpunkt': '40-59°C',
+          'Siedepunkt': '160°C (0.6 mmHg)',
+          'Löslichkeit': 'Löslich in Ethanol, Chloroform',
+          'Lagerung': 'Kühl, trocken, inerte Atmosphäre',
+          'Reinheit': '≥99.2%'
+        }
+      },
+      'psilocybin': {
+        id: 'psilocybin',
+        name: 'Psilocybin (4-PO-DMT)',
+        formula: 'C₁₂H₁₇N₂O₄P',
+        iupac: '[3-(2-dimethylaminoethyl)-1H-indol-4-yl] dihydrogen phosphate',
+        price: 124.99,
+        unit: '25mg',
+        purity: '99.5%',
+        rating: 4.5,
+        reviews: 28,
+        description: 'Pharmazeutisches Psilocybin für klinische Forschung und therapeutische Studien. Extrahiert und gereinigt nach höchsten pharmazeutischen Standards. Besonders geeignet für Studien zur Behandlung von Depressionen, PTSD und Angststörungen.',
+        applications: [
+          'Klinische Forschung',
+          'Therapeutische Studien',
+          'Depressions-Forschung',
+          'PTSD-Behandlung',
+          'Angststörungs-Studien'
+        ],
+        specifications: {
+          'CAS-Nummer': '520-52-5',
+          'Molekulargewicht': '284.25 g/mol',
+          'Schmelzpunkt': '220-228°C',
+          'Löslichkeit': 'Wasserlöslich',
+          'Lagerung': 'Kühl, trocken, lichtgeschützt',
+          'Metabolit': 'Psilocin (4-HO-DMT)',
+          'Reinheit': '≥99.5%'
+        }
+      }
+    };
+
+    // State variables
+    let currentProduct = null;
+    let selectedQuantity = 1;
+    let quantity = 1;
+    let isFavorite = false;
+
+    // Get product ID from URL parameter
+    function getProductIdFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('product') || 'lsd25';
+    }
+
+    // Load product data
+    function loadProduct(productId) {
+      currentProduct = products[productId];
+      if (!currentProduct) {
+        currentProduct = products['lsd25']; // Fallback
+      }
+
+      // Update page title
+      document.getElementById('page-title').textContent = `${currentProduct.name} - ChemLab Pro`;
+      
+      // Update breadcrumb
+      document.getElementById('breadcrumb-product').textContent = currentProduct.name;
+      
+      // Update product info
+      document.getElementById('product-title').textContent = currentProduct.name;
+      document.getElementById('product-formula').textContent = `Molekularformel: ${currentProduct.formula}`;
+      document.getElementById('product-iupac').textContent = `IUPAC-Name: ${currentProduct.iupac}`;
+      document.getElementById('product-price').textContent = `€${currentProduct.price.toFixed(2)}`;
+      document.getElementById('product-unit').textContent = `/ ${currentProduct.unit}`;
+      document.getElementById('purity-badge').textContent = `${currentProduct.purity} Reinheit`;
+      document.getElementById('product-description').textContent = currentProduct.description;
+      document.getElementById('detailed-description').textContent = currentProduct.description;
+      
+      // Update molecular formula display
+      document.getElementById('molecular-formula').textContent = currentProduct.formula;
+      
+      // Update star rating
+      const starRating = document.getElementById('star-rating');
+      starRating.innerHTML = '';
+      const fullStars = Math.floor(currentProduct.rating);
+      const hasHalfStar = currentProduct.rating % 1 !== 0;
+      
+      for (let i = 0; i < 5; i++) {
+        const star = document.createElement('svg');
+        star.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+        star.setAttribute('width', '20');
+        star.setAttribute('height', '20');
+        star.setAttribute('viewBox', '0 0 24 24');
+        star.setAttribute('stroke-width', '2');
+        star.setAttribute('stroke-linecap', 'round');
+        star.setAttribute('stroke-linejoin', 'round');
+        star.className = 'w-5 h-5';
+        
+        if (i < fullStars) {
+          star.setAttribute('fill', '#FBBF24');
+          star.setAttribute('stroke', '#FBBF24');
+        } else if (i === fullStars && hasHalfStar) {
+          star.setAttribute('fill', 'url(#half)');
+          star.setAttribute('stroke', '#FBBF24');
+        } else {
+          star.setAttribute('fill', 'none');
+          star.setAttribute('stroke', '#CCCCCC');
+        }
+        
+        star.innerHTML = '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>';
+        starRating.appendChild(star);
+      }
+      
+      document.getElementById('rating-text').textContent = `(${currentProduct.rating} / ${currentProduct.reviews} Bewertungen)`;
+      
+      // Update applications list
+      const applicationsList = document.getElementById('applications-list');
+      applicationsList.innerHTML = '';
+      currentProduct.applications.forEach(app => {
+        const li = document.createElement('li');
+        li.textContent = app;
+        applicationsList.appendChild(li);
+      });
+      
+      // Update specifications table
+      const specsTable = document.getElementById('specifications-table');
+      specsTable.innerHTML = '';
+      Object.entries(currentProduct.specifications).forEach(([key, value]) => {
+        const row = document.createElement('tr');
+        row.className = 'border-b';
+        row.innerHTML = `
+          <th class="py-3 pr-4 font-semibold text-gray-900">${key}</th>
+          <td class="py-3 text-gray-700">${value}</td>
+        `;
+        specsTable.appendChild(row);
+      });
+      
+      // Update related products
+      updateRelatedProducts();
+    }
+
+    // Update related products
+    function updateRelatedProducts() {
+      const relatedContainer = document.getElementById('related-products');
+      relatedContainer.innerHTML = '';
+      
+      // Get other products (exclude current)
+      const otherProducts = Object.values(products).filter(p => p.id !== currentProduct.id);
+      
+      otherProducts.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card cursor-pointer';
+        productCard.onclick = () => {
+          window.location.href = `product-detail.html?product=${product.id}`;
+        };
+        
+        productCard.innerHTML = `
+          <div class="product-card-image aspect-square">
+            <div class="molecular-structure">
+              <div>${product.formula}</div>
+            </div>
+          </div>
+          <div class="product-card-content">
+            <h3 class="product-card-title">${product.name}</h3>
+            <div class="text-sm text-gray-500 mb-2">${product.formula}</div>
+            <div class="flex justify-between items-center">
+              <p class="product-card-price">€${product.price.toFixed(2)} / ${product.unit}</p>
+              <span class="purity-badge text-xs">${product.purity}</span>
+            </div>
+          </div>
+        `;
+        
+        relatedContainer.appendChild(productCard);
+      });
+    }
+
+    // Quantity selection
+    function updateQuantitySelection(qty) {
+      selectedQuantity = qty;
+      const buttons = document.querySelectorAll('#quantity-selector button');
+      buttons.forEach(button => {
+        if (parseInt(button.dataset.quantity) === qty) {
+          button.classList.add('border-black', 'bg-black', 'text-white');
+          button.classList.remove('border-gray-200', 'hover:border-gray-300');
+        } else {
+          button.classList.remove('border-black', 'bg-black', 'text-white');
+          button.classList.add('border-gray-200', 'hover:border-gray-300');
+        }
+      });
+    }
+
+    // Increment/decrement quantity
+    function incrementQuantity() {
+      quantity++;
+      document.getElementById('quantity').textContent = quantity;
+    }
+
+    function decrementQuantity() {
+      if (quantity > 1) {
+        quantity--;
+        document.getElementById('quantity').textContent = quantity;
+      }
+    }
+
+    // Toggle favorite
+    function toggleFavorite() {
+      isFavorite = !isFavorite;
+      const heartIcon = document.getElementById('heart-icon');
+      if (isFavorite) {
+        heartIcon.setAttribute('fill', '#EF4444');
+        heartIcon.setAttribute('stroke', '#EF4444');
+      } else {
+        heartIcon.setAttribute('fill', 'none');
+        heartIcon.setAttribute('stroke', 'currentColor');
+      }
+    }
+
+    // Add to cart
+    function addToCart() {
+      const totalQuantity = selectedQuantity * quantity;
+      const totalPrice = currentProduct.price * totalQuantity;
+      
+      // Update cart count (you can expand this to actual cart functionality)
+      const cartCount = document.getElementById('cart-count');
+      const currentCount = parseInt(cartCount.textContent);
+      cartCount.textContent = currentCount + totalQuantity;
+      
+      // Show notification
+      alert(`${totalQuantity}x ${currentProduct.name} wurde zum Warenkorb hinzugefügt!\nGesamtpreis: €${totalPrice.toFixed(2)}`);
+    }
+
+    // Switch tabs
+    function switchTab(tabId) {
+      const triggers = document.querySelectorAll('.tab-trigger');
+      const contents = document.querySelectorAll('.tab-content');
+      
+      triggers.forEach(trigger => {
+        if (trigger.dataset.tab === tabId) {
+          trigger.classList.add('active');
+        } else {
+          trigger.classList.remove('active');
+        }
+      });
+      
+      contents.forEach(content => {
+        if (content.id === tabId) {
+          content.classList.add('active');
+        } else {
+          content.classList.remove('active');
+        }
+      });
+    }
+
+    // Cart toggle (placeholder)
+    function toggleCart() {
+      console.log('Cart toggled');
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load product based on URL parameter
+      const productId = getProductIdFromUrl();
+      loadProduct(productId);
+      
+      // Quantity selector buttons
+      document.querySelectorAll('#quantity-selector button').forEach(button => {
+        button.addEventListener('click', () => {
+          updateQuantitySelection(parseInt(button.dataset.quantity));
+        });
+      });
+      
+      // Increment/decrement buttons
+      document.getElementById('increment').addEventListener('click', incrementQuantity);
+      document.getElementById('decrement').addEventListener('click', decrementQuantity);
+      
+      // Favorite button
+      document.getElementById('toggle-favorite').addEventListener('click', toggleFavorite);
+      
+      // Add to cart button
+      document.getElementById('add-to-cart').addEventListener('click', addToCart);
+      
+      // Tab triggers
+      document.querySelectorAll('.tab-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          switchTab(trigger.dataset.tab);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
